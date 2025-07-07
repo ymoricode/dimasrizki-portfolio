@@ -1,12 +1,18 @@
 import { Container, Row, Col, Tab } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import projImg1 from "../assets/img/projek1.png";
+import projImg2 from "../assets/img/projek2.png";
+import projImg3 from "../assets/img/projek3.png";
 import certificate1 from "../assets/img/certi-1.png";
 import certificate2 from "../assets/img/certi-2.png";
 import certificate3 from "../assets/img/certi-3.png";
 import certificate4 from "../assets/img/certi-4.png";
 import certificate5 from "../assets/img/certi-5.png";
 import certificate6 from "../assets/img/certi-6.png";
+import certificate62 from "../assets/img/certi-6.2.png";
+import certificate63 from "../assets/img/certi-6.3.png";
+import certificate64 from "../assets/img/certi-6.4.png";
+import certificate65 from "../assets/img/certi-6.5.png";
 import certificate7 from "../assets/img/certi-7.png";
 import certificate8 from "../assets/img/certi-8.png";
 import certificate9 from "../assets/img/certi-9.png";
@@ -25,6 +31,18 @@ export const Projects = () => {
       title: "Mori AI",
       description: "Development & Design",
       imgUrl: projImg1,
+      link: "https://github.com/ymorii/ymoriai-react",
+    },
+    {
+      title: "Portfolio Website",
+      description: "Development & Design",
+      imgUrl: projImg2,
+      link: "https://github.com/ymorii/ymoriai-react",
+    },
+    {
+      title: "Menu Digital Warung Bakso Putra Solo",
+      description: "Development & Design",
+      imgUrl: projImg3,
       link: "https://github.com/ymorii/ymoriai-react",
     },
   ];
@@ -59,6 +77,26 @@ export const Projects = () => {
       title: "Machine Learning Certification",
       description: "Issued by Dicoding",
       imgUrl: certificate6,
+    },
+    {
+      title: "Belajar Dasar Structured Query Language (SQL)",
+      description: "Issued by Dicoding",
+      imgUrl: certificate62,
+    },
+    {
+      title: "Belajar Dasar Data Science",
+      description: "Issued by Dicoding",
+      imgUrl: certificate63,
+    },
+    {
+      title: "Belajar Dasar Visualisasi Data",
+      description: "Issued by Dicoding",
+      imgUrl: certificate64,
+    },
+    {
+      title: "Belajar Dasar AI",
+      description: "Issued by Dicoding",
+      imgUrl: certificate65,
     },
     {
       title: "Responsive Web Design Certification",

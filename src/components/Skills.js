@@ -50,7 +50,7 @@ export const Skills = () => {
 
     {
       name: "Laravel",
-      level: "Beginner",
+      level: "Intermediate",
       icon: <FaLaravel style={{ color: "#FF2D20" }} />,
     },
 
