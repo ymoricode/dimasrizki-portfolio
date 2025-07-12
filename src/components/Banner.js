@@ -67,9 +67,14 @@ export const Banner = () => {
               addition, I also have knowledge in frameworks such as React js,
               Node js, Next JS and Laravel.
             </p>
-            <button onClick={() => console.log("connect")}>
-              Hire Me <ArrowRightCircle size={25} />
-            </button>
+            <a
+              href="/assets/img/CV_DimasRizkiDwiSaputra.pdf"
+              download
+              className="vvd"
+            >
+              <span>Hire Me</span>{" "}
+              <ArrowRightCircle className="icon-hover" size={25} />
+            </a>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <img src={headerImg} alt="Banner Img" />

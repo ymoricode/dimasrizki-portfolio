@@ -305,6 +305,29 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 80%;
   padding-bottom: 50px;
 }
+.vvd {
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 18px 34px;
+  font-size: 18px;
+  margin-left: 18px;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.vvd .icon-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.vvd:hover .icon-hover {
+  transform: translateX(8px);
+}
+
 @keyframes updown {
   0% {
     transform: translateY(-20px);

@@ -27,7 +27,7 @@ export const Contact = () => {
     setButtonText("Sending...");
 
     try {
-      let response = await fetch("http://localhost:5000/contact", {
+      let response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
@@ -35,14 +35,11 @@ export const Contact = () => {
         body: JSON.stringify(formDetails),
       });
 
-      let result = await response.json(); // ✅ Menunggu hasil JSON dari response
-      console.log("Response dari server:", result); // ✅ Debugging response
-
+      let result = await response.json();
       setButtonText("Send");
       setFormDetails(formInitialDetails);
 
       if (response.ok) {
-        // ✅ Menggunakan response.ok agar lebih reliable
         setStatus({ success: true, message: "Message sent successfully!" });
       } else {
         setStatus({
@@ -52,7 +49,7 @@ export const Contact = () => {
         });
       }
     } catch (error) {
-      console.error("Error di frontend:", error); // ✅ Debugging error
+      console.error("Error di frontend:", error);
       setButtonText("Send");
       setStatus({
         success: false,
