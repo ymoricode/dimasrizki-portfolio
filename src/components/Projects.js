@@ -1,8 +1,8 @@
-import { Container, Row, Col, Tab } from "react-bootstrap";
-import Nav from "react-bootstrap/Nav";
+import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import projImg1 from "../assets/img/projek1.png";
 import projImg2 from "../assets/img/projek2.png";
 import projImg3 from "../assets/img/projek3.png";
+import projImg4 from "../assets/img/projek4.png";
 import certificate1 from "../assets/img/certi-1.png";
 import certificate2 from "../assets/img/certi-2.png";
 import certificate3 from "../assets/img/certi-3.png";
@@ -24,6 +24,7 @@ import certificate14 from "../assets/img/certi-14.png";
 import certificate15 from "../assets/img/certi-15.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import ProjectsCard from "./ProjectsCard";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
   const projects = [
@@ -31,118 +32,52 @@ export const Projects = () => {
       title: "Mori AI",
       description: "Development & Design",
       imgUrl: projImg1,
-      link: "https://github.com/ymorii/ymoriai-react",
+      githubUrl: "https://github.com/ymorii/ymoriai-react",
+      demoUrl: "https://moriai.example.com",
     },
     {
       title: "Portfolio Website",
       description: "Development & Design",
       imgUrl: projImg2,
-      link: "https://github.com/ymorii/ymoriai-react",
+      githubUrl: "https://github.com/ymorii/portfolio",
+      demoUrl: "#",
     },
     {
       title: "Menu Digital Warung Bakso Putra Solo",
       description: "Development & Design",
       imgUrl: projImg3,
-      link: "https://github.com/ymorii/ymoriai-react",
+      githubUrl: "https://github.com/ymoricode/menudigital-web-app",
+      demoUrl: "https://github.com/ymoricode/menudigital-web-app",
+    },
+    {
+      title: "Noteflow",
+      description: "Development & Design",
+      imgUrl: projImg4,
+      githubUrl: "https://github.com/ymoricode/noteflow-app",
+      demoUrl: "https://github.com/ymoricode/noteflow-app",
     },
   ];
 
   const certificates = [
-    {
-      title: "React Certification",
-      description: "Issued by Dicoding",
-      imgUrl: certificate1,
-    },
-    {
-      title: "Javascript Certification",
-      description: "Issued by Dicoding",
-      imgUrl: certificate2,
-    },
-    {
-      title: "Front-End Certification",
-      description: "Issued by Dicoding",
-      imgUrl: certificate3,
-    },
-    {
-      title: "Web Dev Basic Certification",
-      description: "Issued by Dicoding",
-      imgUrl: certificate4,
-    },
-    {
-      title: "Python Certification",
-      description: "Issued by Dicoding",
-      imgUrl: certificate5,
-    },
-    {
-      title: "Machine Learning Certification",
-      description: "Issued by Dicoding",
-      imgUrl: certificate6,
-    },
-    {
-      title: "Belajar Dasar Structured Query Language (SQL)",
-      description: "Issued by Dicoding",
-      imgUrl: certificate62,
-    },
-    {
-      title: "Belajar Dasar Data Science",
-      description: "Issued by Dicoding",
-      imgUrl: certificate63,
-    },
-    {
-      title: "Belajar Dasar Visualisasi Data",
-      description: "Issued by Dicoding",
-      imgUrl: certificate64,
-    },
-    {
-      title: "Belajar Dasar AI",
-      description: "Issued by Dicoding",
-      imgUrl: certificate65,
-    },
-    {
-      title: "Responsive Web Design Certification",
-      description: "Issued by freeCodeCamp",
-      imgUrl: certificate7,
-    },
-    {
-      title: "Front-End Development Liblaries Certification",
-      description: "Issued by freeCodeCamp",
-      imgUrl: certificate8,
-    },
-    {
-      title: "Javascript Algorithms and Data Structures Certification",
-      description: "Issued by freeCodeCamp",
-      imgUrl: certificate9,
-    },
-    {
-      title: "Front-End Javascript Certification",
-      description: "Issued by MySkill",
-      imgUrl: certificate10,
-    },
-    {
-      title: "Front-End React Certification",
-      description: "Issued by MySkill",
-      imgUrl: certificate11,
-    },
-    {
-      title: "PHP Certification",
-      description: "Issued by Always Ngoding",
-      imgUrl: certificate12,
-    },
-    {
-      title: "Javascript Certification",
-      description: "Issued by Always Ngoding",
-      imgUrl: certificate13,
-    },
-    {
-      title: "CSS Certification",
-      description: "Issued by Always Ngoding",
-      imgUrl: certificate14,
-    },
-    {
-      title: "HTML Certification",
-      description: "Issued by Always Ngoding",
-      imgUrl: certificate15,
-    },
+    { title: "React Certification", description: "Issued by Dicoding", imgUrl: certificate1 },
+    { title: "Javascript Certification", description: "Issued by Dicoding", imgUrl: certificate2 },
+    { title: "Front-End Certification", description: "Issued by Dicoding", imgUrl: certificate3 },
+    { title: "Web Dev Basic Certification", description: "Issued by Dicoding", imgUrl: certificate4 },
+    { title: "Python Certification", description: "Issued by Dicoding", imgUrl: certificate5 },
+    { title: "Machine Learning Certification", description: "Issued by Dicoding", imgUrl: certificate6 },
+    { title: "Belajar Dasar SQL", description: "Issued by Dicoding", imgUrl: certificate62 },
+    { title: "Belajar Dasar Data Science", description: "Issued by Dicoding", imgUrl: certificate63 },
+    { title: "Belajar Dasar Visualisasi Data", description: "Issued by Dicoding", imgUrl: certificate64 },
+    { title: "Belajar Dasar AI", description: "Issued by Dicoding", imgUrl: certificate65 },
+    { title: "Responsive Web Design", description: "Issued by freeCodeCamp", imgUrl: certificate7 },
+    { title: "Front-End Dev Libraries", description: "Issued by freeCodeCamp", imgUrl: certificate8 },
+    { title: "JS Algorithms & Data Structures", description: "Issued by freeCodeCamp", imgUrl: certificate9 },
+    { title: "Front-End Javascript", description: "Issued by MySkill", imgUrl: certificate10 },
+    { title: "Front-End React", description: "Issued by MySkill", imgUrl: certificate11 },
+    { title: "PHP Certification", description: "Issued by Always Ngoding", imgUrl: certificate12 },
+    { title: "Javascript Certification", description: "Issued by Always Ngoding", imgUrl: certificate13 },
+    { title: "CSS Certification", description: "Issued by Always Ngoding", imgUrl: certificate14 },
+    { title: "HTML Certification", description: "Issued by Always Ngoding", imgUrl: certificate15 },
   ];
 
   return (
@@ -150,24 +85,29 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <h2>Projects and Certificate</h2>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2>Projects & Certificates</h2>
+              <p>
+                Explore my latest projects and professional certifications. 
+                Hover over the cards to see more details!
+              </p>
+            </motion.div>
+            
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
-              <Nav
-                variant="pills"
-                className="nav-pills mb-5 justify-content-center align-items-center"
-                id="pills-tab"
-              >
+              <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                 <Nav.Item>
                   <Nav.Link eventKey="first">Projects</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Certificate</Nav.Link>
+                  <Nav.Link eventKey="second">Certificates</Nav.Link>
                 </Nav.Item>
               </Nav>
+              
               <Tab.Content>
                 <Tab.Pane eventKey="first">
                   <Row>
@@ -178,8 +118,8 @@ export const Projects = () => {
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
                   <Row>
-                    {certificates.map((certificate, index) => (
-                      <ProjectsCard key={index} {...certificate} />
+                    {certificates.map((cert, index) => (
+                      <ProjectsCard key={index} {...cert} />
                     ))}
                   </Row>
                 </Tab.Pane>
@@ -188,11 +128,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img
-        className="background-image-right"
-        src={colorSharp2}
-        alt="Background"
-      />
+      <img className="background-image-right" src={colorSharp2} alt="Background" />
     </section>
   );
 };
