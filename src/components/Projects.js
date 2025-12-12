@@ -56,10 +56,18 @@ export const Projects = () => {
       githubUrl: "https://github.com/ymoricode/noteflow-app",
       demoUrl: "https://github.com/ymoricode/noteflow-app",
     },
+        {
+      title: "Plantcare AI",
+      description: "Development & Design",
+      imgUrl: projImg4,
+      githubUrl: "https://github.com/ymoricode/Plantcare-ai",
+      demoUrl: "https://github.com/ymoricode/Plantcare-ai",
+    },
   ];
 
   const certificates = [
     { title: "React Certification", description: "Issued by Dicoding", imgUrl: certificate1 },
+    { title: "Fundamental Front-End Web Development", description: "Issued by Dicoding", imgUrl: certificate16 },
     { title: "Javascript Certification", description: "Issued by Dicoding", imgUrl: certificate2 },
     { title: "Front-End Certification", description: "Issued by Dicoding", imgUrl: certificate3 },
     { title: "Web Dev Basic Certification", description: "Issued by Dicoding", imgUrl: certificate4 },
