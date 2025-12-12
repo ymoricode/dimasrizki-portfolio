@@ -3,6 +3,7 @@ import projImg1 from "../assets/img/projek1.png";
 import projImg2 from "../assets/img/projek2.png";
 import projImg3 from "../assets/img/projek3.png";
 import projImg4 from "../assets/img/projek4.png";
+import projImg5 from "../assets/img/projek5.png";
 import certificate1 from "../assets/img/certi-1.png";
 import certificate2 from "../assets/img/certi-2.png";
 import certificate3 from "../assets/img/certi-3.png";
@@ -22,6 +23,7 @@ import certificate12 from "../assets/img/certi-12.png";
 import certificate13 from "../assets/img/certi-13.png";
 import certificate14 from "../assets/img/certi-14.png";
 import certificate15 from "../assets/img/certi-15.png";
+import certificate16 from "../assets/img/certi-16.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import ProjectsCard from "./ProjectsCard";
 import { motion } from "framer-motion";
@@ -59,7 +61,7 @@ export const Projects = () => {
         {
       title: "Plantcare AI",
       description: "Development & Design",
-      imgUrl: projImg4,
+      imgUrl: projImg5,
       githubUrl: "https://github.com/ymoricode/Plantcare-ai",
       demoUrl: "https://github.com/ymoricode/Plantcare-ai",
     },
