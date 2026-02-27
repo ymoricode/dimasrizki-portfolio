@@ -129,7 +129,7 @@ export const projects: Project[] = [
     description: "This project is an AI-based web application built with ReactJS, TailwindCSS, and Appwrite for user authentication and data management. The app leverages the Gemini API for AI-powered functionalities.",
     image: "/images/projekk2.png",
     year: "2026",
-    link: "https://github.com/ymoricode/MoriAI-react",
+    link: "https://github.com/ymoricode/dimasrizki-portfolio",
     category: "web-development"
   },
   // === Data Analyst Projects ===
