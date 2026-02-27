@@ -1,10 +1,10 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { services } from '@/lib/data';
 
-const icons: Record<string, JSX.Element> = {
+const icons: Record<string, React.ReactNode> = {
   code: (
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <path d="M16 18L22 12L16 6M8 6L2 12L8 18" strokeLinecap="round" strokeLinejoin="round"/>
