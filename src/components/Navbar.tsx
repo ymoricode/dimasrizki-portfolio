@@ -25,7 +25,7 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-background)]"
     >
-      <nav className="container hidden md:grid grid-cols-3 items-center h-20 md:h-24">
+      <nav className="container hidden md:grid grid-cols-3 items-center h-20 md:h-24 px-6 md:px-8 lg:px-[var(--container-padding)]">
         {/* Logo — left */}
         <Link href="/" className="relative z-10 justify-self-start">
           <motion.div
@@ -34,7 +34,7 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-2"
           >
-            <span className="font-serif text-xl md:text-2xl tracking-tight text-[var(--color-foreground)]">
+            <span className="font-serif text-lg md:text-xl lg:text-2xl tracking-tight text-[var(--color-foreground)]">
               Dimas Rizki DS<span className="text-[var(--color-accent)]">.</span>
             </span>
           </motion.div>
@@ -45,7 +45,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex items-center justify-center gap-8"
+          className="flex items-center justify-center gap-4 lg:gap-8"
         >
           {navigation.map((item, index) => (
             <motion.li
@@ -56,7 +56,7 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className="text-sm font-medium tracking-wide text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors relative group"
+                className="text-xs lg:text-sm font-medium tracking-wide text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors relative group"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[var(--color-accent)] transition-all duration-300 group-hover:w-full" />

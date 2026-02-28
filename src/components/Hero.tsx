@@ -111,13 +111,13 @@ export default function Hero() {
       {/* Content Container */}
       <motion.div 
         style={{ opacity }}
-        className="container relative z-10 flex flex-col min-h-[100svh]"
+        className="container relative z-10 flex flex-col min-h-[100svh] px-6 md:px-8 lg:px-[var(--container-padding)]"
       >
         {/* Mobile Layout: stacked vertically, image at bottom */}
-        <div className="flex flex-col justify-between flex-1 pt-20 md:pt-28 lg:pt-32">
+        <div className="flex flex-col justify-between flex-1 pt-20 md:pt-24 lg:pt-32">
           
           {/* Desktop: 2-col grid / Mobile: stacked */}
-          <div className="grid lg:grid-cols-2 gap-4 md:gap-10 lg:gap-16 items-center flex-1">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-16 items-center flex-1">
             
             {/* Left Column - Text Content */}
             <div className="text-left flex flex-col justify-center">
@@ -126,7 +126,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="mb-2 md:mb-4 text-[2.75rem] sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-sans font-bold leading-[1.05] text-[var(--color-foreground)] tracking-tight"
+                className="mb-2 md:mb-4 text-[2.75rem] sm:text-6xl md:text-5xl lg:text-7xl xl:text-8xl font-sans font-bold leading-[1.05] text-[var(--color-foreground)] tracking-tight"
               >
                 HELLO.
               </motion.h1>
@@ -136,7 +136,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-sm sm:text-base md:text-lg lg:text-xl mb-5 md:mb-8 lg:mb-10 text-[var(--color-foreground-muted)] italic"
+                className="text-sm sm:text-base md:text-sm lg:text-xl mb-5 md:mb-6 lg:mb-10 text-[var(--color-foreground-muted)] italic"
               >
                 I&apos;m Dimas, a <TypewriterText />
               </motion.p>
@@ -150,7 +150,7 @@ export default function Hero() {
               >
                 <a 
                   href="#contact" 
-                  className="btn-primary rounded-full group text-xs sm:text-sm"
+                  className="btn-primary rounded-full group text-xs md:text-[0.7rem] lg:text-sm md:px-4 md:py-3 lg:px-7 lg:py-4"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -162,7 +162,7 @@ export default function Hero() {
                 <a 
                   href="/cv-dimas-rizki.pdf" 
                   download 
-                  className="btn-outline rounded-full group text-xs sm:text-sm"
+                  className="btn-outline rounded-full group text-xs md:text-[0.7rem] lg:text-sm md:px-4 md:py-3 lg:px-8 lg:py-4"
                 >
                   CV
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -184,10 +184,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative flex items-end justify-center lg:items-center mt-4 lg:mt-0"
+              className="relative flex items-end justify-center md:items-center mt-4 md:mt-0"
             >
               {/* Image Container */}
-              <div className="relative w-[260px] h-[320px] sm:w-[280px] sm:h-[360px] md:w-[340px] md:h-[430px] lg:w-[380px] lg:h-[480px] xl:w-[420px] xl:h-[530px] overflow-hidden rounded-2xl lg:rounded-none">
+              <div className="relative w-[260px] h-[320px] sm:w-[280px] sm:h-[360px] md:w-[260px] md:h-[340px] lg:w-[380px] lg:h-[480px] xl:w-[420px] xl:h-[530px] overflow-hidden rounded-2xl md:rounded-none">
                 {/* Parallax Image */}
                 <motion.div
                   style={{ y: imageYSpring }}
@@ -206,7 +206,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)] via-transparent to-transparent opacity-40" />
                 
                 {/* Border */}
-                <div className="absolute inset-0 border border-[var(--color-border)] rounded-2xl lg:rounded-none" />
+                <div className="absolute inset-0 border border-[var(--color-border)] rounded-2xl md:rounded-none" />
               </div>
 
               {/* Decorative dot */}
@@ -214,7 +214,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
-                className="absolute bottom-16 right-[10%] sm:right-[15%] lg:right-[-12px] w-3 h-3 rounded-full bg-[var(--color-accent)]"
+                className="absolute bottom-16 right-[10%] sm:right-[15%] md:right-[-12px] w-3 h-3 rounded-full bg-[var(--color-accent)]"
               />
 
               {/* Decorative Lines - Desktop only */}
@@ -222,13 +222,13 @@ export default function Hero() {
                 initial={{ scaleY: 0 }}
                 animate={{ scaleY: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
-                className="hidden lg:block absolute -right-6 top-1/4 w-[1px] h-24 bg-gradient-to-b from-[var(--color-accent)] to-transparent origin-top"
+                className="hidden md:block absolute -right-6 top-1/4 w-[1px] h-24 bg-gradient-to-b from-[var(--color-accent)] to-transparent origin-top"
               />
             </motion.div>
           </div>
 
           {/* Bottom spacing */}
-          <div className="pb-4 md:pb-8 lg:pb-16" />
+          <div className="pb-4 md:pb-6 lg:pb-16" />
         </div>
       </motion.div>
     </section>
