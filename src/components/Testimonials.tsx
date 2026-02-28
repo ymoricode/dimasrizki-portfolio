@@ -4,35 +4,58 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { testimonials } from '@/lib/data';
 
+// Split testimonials into two rows
+const row1 = testimonials.slice(0, Math.ceil(testimonials.length / 2));
+const row2 = testimonials.slice(Math.ceil(testimonials.length / 2));
+
+function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
+  return (
+    <div
+      className="relative flex-shrink-0 w-[280px] p-4 lg:p-5 rounded-xl border border-[var(--color-border)] group hover:border-[var(--color-accent)]/50 transition-all duration-500"
+      style={{
+        background: 'linear-gradient(145deg, var(--color-background-card) 0%, var(--color-background-alt) 100%)',
+      }}
+    >
+      {/* Content */}
+      <div className="relative">
+        <p className="text-[13px] leading-relaxed text-[var(--color-foreground-muted)] mb-4">
+          &ldquo;{testimonial.quote}&rdquo;
+        </p>
+
+        <div className="flex items-center gap-2.5">
+          {/* Avatar */}
+          <div className="w-8 h-8 rounded-full bg-[var(--color-accent)]/20 border border-[var(--color-accent)]/30 flex items-center justify-center flex-shrink-0">
+            <span className="text-xs text-[var(--color-accent)] font-semibold">
+              {testimonial.name.charAt(0)}
+            </span>
+          </div>
+          <div>
+            <h4 className="text-xs font-semibold text-[var(--color-accent)]">
+              @{testimonial.name.split(' ').join('').toLowerCase()}
+            </h4>
+            <p className="text-[11px] text-[var(--color-foreground-subtle)]">
+              {testimonial.role}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Glow Effect */}
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[var(--color-accent)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+    </div>
+  );
+}
+
 export default function Testimonials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-      },
-    },
-  };
+  // Duplicate items for seamless infinite loop
+  const row1Items = [...row1, ...row1, ...row1, ...row1];
+  const row2Items = [...row2, ...row2, ...row2, ...row2];
 
   return (
-    <section className="section bg-[var(--color-background-alt)]">
+    <section className="section bg-[var(--color-background-alt)] overflow-hidden">
       <div className="container">
         {/* Section Header */}
         <motion.div
@@ -40,73 +63,54 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-          className="text-center mb-16"
+          className="flex items-center justify-between mb-12"
         >
-          <span className="section-label">Testimonials</span>
-          <h2 className="mt-4 mx-auto max-w-3xl">
-            What clients <span className="text-[var(--color-accent)]">say</span>
-          </h2>
+          <div className="flex items-center gap-3">
+            <span className="text-[var(--color-accent)] text-2xl font-bold">&rsaquo;</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
+              What People <span className="text-[var(--color-accent)]">Say</span>
+            </h2>
+          </div>
         </motion.div>
+      </div>
 
-        {/* Testimonials Grid */}
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-3 gap-6 lg:gap-8"
-        >
-          {testimonials.map((testimonial) => (
-            <motion.div
-              key={testimonial.id}
-              variants={itemVariants}
-              className="relative p-8 lg:p-10 bg-[var(--color-background-card)] border border-[var(--color-border)] group hover:border-[var(--color-accent)]/50 transition-colors duration-500"
-            >
-              {/* Quote Mark */}
-              <div className="absolute top-6 right-8">
-                <span className="text-8xl font-serif text-[var(--color-accent)] opacity-10 leading-none select-none">
-                  &ldquo;
-                </span>
-              </div>
+      {/* Marquee Container */}
+      <div ref={ref} className="relative">
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-40 z-10"
+          style={{ background: 'linear-gradient(to right, var(--color-background-alt), transparent)' }}
+        />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-40 z-10"
+          style={{ background: 'linear-gradient(to left, var(--color-background-alt), transparent)' }}
+        />
 
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="16" height="16" viewBox="0 0 16 16" fill="var(--color-accent)">
-                    <path d="M8 0L10.3511 5.18237L16 5.87336L11.768 9.81763L12.9389 16L8 12.9824L3.06107 16L4.23196 9.81763L0 5.87336L5.64886 5.18237L8 0Z"/>
-                  </svg>
-                ))}
-              </div>
+        {/* Row 1 - Scrolls Left */}
+        <div className="mb-4 overflow-hidden">
+          <div
+            className="flex gap-4 testimonial-marquee-left"
+            style={{
+              width: 'max-content',
+            }}
+          >
+            {row1Items.map((testimonial, index) => (
+              <TestimonialCard key={`row1-${testimonial.id}-${index}`} testimonial={testimonial} />
+            ))}
+          </div>
+        </div>
 
-              {/* Content */}
-              <div className="relative">
-                <p className="text-lg leading-relaxed text-[var(--color-foreground)] mb-8 font-serif italic">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-
-                <div className="flex items-center gap-4">
-                  {/* Avatar */}
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)]/20 border border-[var(--color-accent)]/30 flex items-center justify-center">
-                    <span className="text-[var(--color-accent)] font-semibold">
-                      {testimonial.name.charAt(0)}
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-[var(--color-foreground)]">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-sm text-[var(--color-foreground-subtle)]">
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Row 2 - Scrolls Right */}
+        <div className="overflow-hidden">
+          <div
+            className="flex gap-4 testimonial-marquee-right"
+            style={{
+              width: 'max-content',
+            }}
+          >
+            {row2Items.map((testimonial, index) => (
+              <TestimonialCard key={`row2-${testimonial.id}-${index}`} testimonial={testimonial} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

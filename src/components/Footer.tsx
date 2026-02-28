@@ -106,9 +106,6 @@ export default function Footer() {
           <p className="text-sm text-[var(--color-foreground-subtle)]">
             © {currentYear} {personalInfo.name}. All rights reserved.
           </p>
-          <p className="text-sm text-[var(--color-foreground-subtle)]">
-            Designed & Developed with <span className="text-[var(--color-accent)]">♥</span> in {personalInfo.location}
-          </p>
         </motion.div>
       </div>
     </footer>

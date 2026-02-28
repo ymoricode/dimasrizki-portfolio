@@ -394,6 +394,36 @@ export const testimonials: Testimonial[] = [
     name: "Emily Park",
     role: "Creative Director, DesignHub",
     quote: "Exceptional frontend skills combined with a designer's eye. Rare to find someone who excels at both."
+  },
+  {
+    id: 4,
+    name: "David Rahman",
+    role: "CTO, InnovateTech",
+    quote: "Dimas built our entire frontend architecture from scratch. The codebase is clean, scalable, and a pleasure to work with."
+  },
+  {
+    id: 5,
+    name: "Jessica Liu",
+    role: "Marketing Lead, BrandCo",
+    quote: "Our conversion rate improved by 40% after the redesign. Dimas truly understands how design impacts business metrics."
+  },
+  {
+    id: 6,
+    name: "Alex Wijaya",
+    role: "CEO, DigitalFirst",
+    quote: "Fast turnaround, pixel-perfect execution, and great communication throughout the project. Highly recommended!"
+  },
+  {
+    id: 7,
+    name: "Nina Patel",
+    role: "UX Researcher, DesignLab",
+    quote: "The data visualization dashboards Dimas created are both beautiful and incredibly functional. Users love the intuitive interface."
+  },
+  {
+    id: 8,
+    name: "Ryan Kusuma",
+    role: "Product Owner, CloudSync",
+    quote: "Dimas transformed our complex data into clear, actionable insights with stunning dashboard designs. Absolutely brilliant work."
   }
 ];
 
