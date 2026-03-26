@@ -16,7 +16,7 @@ const skillsData = [
   {
     id: 'data',
     title: 'DATA ANALYST',
-    skills: ['PYTHON', 'PANDAS', 'NUMPY', 'SQL', 'EXCEL', 'DATA VISUALIZATION', 'POWER BI'],
+    skills: ['PYTHON', 'PANDAS', 'NUMPY', 'SQL', 'EXCEL', 'DATA VISUALIZATION', 'POWER BI', ],
     direction: 'right',
   },
   {
@@ -30,6 +30,12 @@ const skillsData = [
     title: 'UI / UX DESIGN',
     skills: ['WIREFRAMING', 'PROTOTYPING', 'DESIGN SYSTEM', 'USABILITY TESTING'],
     direction: 'right',
+  },
+  {
+    id: 'ai-tools',
+    title: 'AI TOOLS',
+    skills: ['CHATGPT', 'GEMINI', 'CLAUDE AI', 'ANTIGRAVITY'],
+    direction: 'left',
   },
 ];
 

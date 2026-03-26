@@ -135,12 +135,12 @@ export const projects: Project[] = [
   // === Data Analyst Projects ===
   {
     id: 6,
-    title: "Sales Performance Dashboard",
+    title: "Transaction Dashboard Retail",
     role: "Data Analysis & Visualization",
-    description: "Interactive sales analytics dashboard built with Python and Tableau, featuring trend analysis, forecasting, and KPI tracking across multiple regions.",
-    image: "/images/projek-da1.png",
-    year: "2025",
-    link: "#",
+    description: "This dashboard summarizes retail performance, including sales, customers, profit, discounts, and quantity sold. It highlights sales trends, discount distribution per product, top customers and products, and dominant payment methods like COD and PayLater, with key revenue driven by categories such as Mobiles and Tablets.",
+    image: "/images/dataanalyst1.png",
+    year: "2026",
+    link: "https://lookerstudio.google.com/reporting/a5411bf0-e29b-4e28-92dd-562d5b1d5d3c",
     category: "data-analyst"
   },
   {
